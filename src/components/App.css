@@ -1,0 +1,47 @@
+.App {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  padding: 0 18px;
+  background-color: #fff;
+}
+
+.navbar h1 {
+  color: #0491ff;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  padding: 26px;
+  color: #ababab;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+}
+
+.input-title {
+  width: 40%;
+  border: 1px solid #f5f5f5;
+  color: #e7e7e7;
+}
+
+.select {
+  width: 22%;
+}
+
+.add-book {
+  background-color: #2265f6;
+  padding: 11px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
