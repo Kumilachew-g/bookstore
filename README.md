@@ -17,7 +17,7 @@ The Bookstore website is a content management system that allows you to:
 
 ## Live Demo
 
-[Coming Soon](https://Kumilachew-g.github.io/bookstore)
+[Live Demo(1st)](https://reactbookstoreapp.netlify.app/)
 
 ## Getting Started
 
