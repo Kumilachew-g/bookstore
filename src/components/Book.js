@@ -4,7 +4,7 @@ import RemoveBook from './RemoveBook';
 
 const Book = ({ id, title, author }) => (
   <div>
-    <div className='book-card '>
+    <div className="book-card ">
       <h2>{title}</h2>
       <h3>{author}</h3>
       <RemoveBook id={id} />
