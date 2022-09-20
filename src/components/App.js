@@ -10,11 +10,11 @@ import './App.css';
 const App = () => (
   // Use Redux Provider
   <Provider store={store}>
-    <div className='App'>
+    <div className="App">
       <Navbar />
       <Routes>
-        <Route path='/' element={<BookLists />} />
-        <Route exact path='/categories' element={<Categories />} />
+        <Route path="/" element={<BookLists />} />
+        <Route exact path="/categories" element={<Categories />} />
       </Routes>
     </div>
   </Provider>
