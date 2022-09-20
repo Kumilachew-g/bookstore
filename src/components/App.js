@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+// import redux provider
 import { Provider } from 'react-redux';
 import Navbar from './Navbar';
 import BookLists from './BookList';
