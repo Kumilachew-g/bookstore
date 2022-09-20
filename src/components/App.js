@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+// import redux provider
 import { Provider } from 'react-redux';
 import Navbar from './Navbar';
 import BookLists from './BookList';
@@ -7,6 +8,7 @@ import store from '../redux/configureStore';
 import './App.css';
 
 const App = () => (
+  // Use Redux Provider
   <Provider store={store}>
     <div className="App">
       <Navbar />

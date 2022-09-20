@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 import { v4 as uuidv4 } from 'uuid';
+// Import useDispatch
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
 
@@ -12,6 +13,7 @@ const categories = [
 ];
 
 const InputBook = () => {
+  // Use useDispatch to access the dispatch function
   const dispatch = useDispatch();
 
   const [title, setTitle] = useState('');
