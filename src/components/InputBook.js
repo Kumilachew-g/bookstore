@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 import { v4 as uuidv4 } from 'uuid';
+// Import useDispatch
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
 
@@ -12,6 +13,7 @@ const categories = [
 ];
 
 const InputBook = () => {
+  // Use useDispatch to access the dispatch function
   const dispatch = useDispatch();
 
   const [title, setTitle] = useState('');
@@ -43,27 +45,27 @@ const InputBook = () => {
   return (
     <form onSubmit={handleSubmit}>
       <h1 style={{ color: '#D9D9D9', padding: '0 50px' }}>ADD NEW BOOK</h1>
-      <div className="form-container">
+      <div className='form-container'>
         <input
-          type="text"
-          className="input-title"
-          id="bookTitle"
-          placeholder="Book Title"
+          type='text'
+          className='input-title'
+          id='bookTitle'
+          placeholder='Book Title'
           value={title}
           onChange={handleTitleChange}
-          name="title"
+          name='title'
         />
         <input
-          type="text"
-          className="input-title"
-          id="bookAuthor"
-          placeholder="Book Author"
+          type='text'
+          className='input-title'
+          id='bookAuthor'
+          placeholder='Book Author'
           value={author}
-          name="author"
+          name='author'
           onChange={handleAuthorChange}
         />
-        <Select options={categories} className="select" />
-        <input type="submit" value="ADD BOOK" className="add-book" />
+        <Select options={categories} className='select' />
+        <input type='submit' value='ADD BOOK' className='add-book' />
       </div>
     </form>
   );
