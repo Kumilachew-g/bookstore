@@ -1,9 +1,16 @@
-import React from 'react';
+const CHECK_STATUS = 'CHECK_STATUS';
 
-const CategoriesPage = () => (
-  <>
-    <p className="P-text">Coming Soon!!!</p>
-  </>
-);
+export const checkStatus = () => ({
+  type: CHECK_STATUS,
+});
 
-export default CategoriesPage;
+const bookStatusReducer = (state = [], action) => {
+  switch (action.type) {
+    case CHECK_STATUS:
+      return ['Under construction'];
+    default:
+      return state;
+  }
+};
+
+export default bookStatusReducer;
