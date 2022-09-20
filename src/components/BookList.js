@@ -10,7 +10,7 @@ const BookLists = () => {
   ));
 
   return (
-    <div className='book-lists'>
+    <div className="book-lists">
       {mapBooks}
       <InputBook />
     </div>
