@@ -3,12 +3,12 @@ import axios from 'axios';
 const GET_BOOKS = 'bookStore/books/GET_BOOKS';
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
-const fetchApi = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/GFFEgsISOe46DTFg0eTa/books';
+const baseApi = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/W8hBJ81jELKlP2JH8SLX/books';
 
 const initialState = [];
 
 export const getBooks = () => async (dispatch) => {
-  const result = await axios.get(fetchApi);
+  const result = await axios.get(baseApi);
   const books = result.data;
 
   const allBooks = Object.entries(books);
@@ -24,7 +24,7 @@ export const getBooks = () => async (dispatch) => {
 };
 
 export const addBook = (book) => async (dispatch) => {
-  const result = await axios.post(fetchApi, {
+  const result = await axios.post(baseApi, {
     item_id: book.id,
     title: book.title,
     category: book.category,
@@ -39,7 +39,7 @@ export const addBook = (book) => async (dispatch) => {
 };
 
 export const removeBook = (bookId) => async (dispatch) => {
-  const result = await axios.delete(`${fetchApi}/${bookId}`, {
+  const result = await axios.delete(`${baseApi}/${bookId}`, {
     headers: {
       'content-type': 'application/json',
       'Access-Controll-Allow-Origin': '*',
