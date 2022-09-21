@@ -1,45 +1,68 @@
+import axios from 'axios';
+
+const GET_BOOKS = 'bookStore/books/GET_BOOKS';
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
+const fetchApi =
+  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/GFFEgsISOe46DTFg0eTa/books';
 
-// Set the initial state to be an empty array of books.
-// const initialsState = [];
+const initialState = [];
 
-const books = [
-  {
-    id: 1,
-    title: 'Basic Coding',
-    author: 'Haddis',
-  },
-  {
-    id: 2,
-    title: 'The War',
-    author: 'Powers',
-  },
-  {
-    id: 3,
-    title: 'Programmers',
-    author: 'Henok',
-  },
-];
+export const getBooks = () => async (dispatch) => {
+  const result = await axios.get(fetchApi);
+  const books = result.data;
 
-// Define action types and Export Action Creators
-export const addBook = (payload) => ({
-  type: ADD_BOOK,
-  payload,
-});
+  const allBooks = Object.entries(books);
+  const fetchedBooks = [];
+  allBooks.forEach(([key, value]) => {
+    const id = key;
+    const { title } = value[0];
+    const { category } = value[0];
+    fetchedBooks.push({ id, title, category });
+  });
 
-export const removeBook = (payload) => ({
-  type: REMOVE_BOOK,
-  payload,
-});
+  dispatch({ type: GET_BOOKS, fetchedBooks });
+};
 
-// Write reducer and export it as default
-const bookReducer = (state = books, action) => {
+export const addBook = (book) => async (dispatch) => {
+  const result = await axios.post(fetchApi, {
+    item_id: book.id,
+    title: book.title,
+    category: book.category,
+  });
+  const addedBook = result.data;
+  if (addedBook === 'Created') {
+    dispatch({
+      type: ADD_BOOK,
+      book,
+    });
+  }
+};
+
+export const removeBook = (bookId) => async (dispatch) => {
+  const result = await axios.delete(`${fetchApi}/${bookId}`, {
+    headers: {
+      'content-type': 'application/json',
+      'Access-Controll-Allow-Origin': '*',
+    },
+  });
+  const removedBook = await result.data;
+  if (removedBook) {
+    dispatch({
+      type: REMOVE_BOOK,
+      bookId,
+    });
+  }
+};
+
+const bookReducer = (state = initialState, action) => {
   switch (action.type) {
+    case GET_BOOKS:
+      return [...action.fetchedBooks];
     case ADD_BOOK:
-      return [...state, action.payload];
+      return [...state, action.book];
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload);
+      return state.filter((book) => book.id !== action.bookId);
     default:
       return state;
   }
