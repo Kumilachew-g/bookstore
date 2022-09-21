@@ -16,8 +16,11 @@ export const getBooks = () => async (dispatch) => {
   allBooks.forEach(([key, value]) => {
     const id = key;
     const { title } = value[0];
+    const { auther } = value[0];
     const { category } = value[0];
-    fetchedBooks.push({ id, title, category });
+    fetchedBooks.push({
+      id, title, auther, category,
+    });
   });
 
   dispatch({ type: GET_BOOKS, fetchedBooks });
@@ -27,6 +30,7 @@ export const addBook = (book) => async (dispatch) => {
   const result = await axios.post(baseApi, {
     item_id: book.id,
     title: book.title,
+    auther: book.auther,
     category: book.category,
   });
   const addedBook = result.data;
