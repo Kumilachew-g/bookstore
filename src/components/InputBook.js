@@ -31,21 +31,21 @@ const InputBook = () => {
   return (
     <form onSubmit={handleSubmit}>
       <h1 style={{ color: '#D9D9D9', padding: '0 50px' }}>ADD NEW BOOK</h1>
-      <div className='form-container'>
+      <div className="form-container">
         <input
-          type='text'
-          className='input-title'
-          id='bookTitle'
-          placeholder='Book Title'
+          type="text"
+          className="input-title"
+          id="bookTitle"
+          placeholder="Book Title"
           value={title}
           onChange={handleTitleChange}
-          name='title'
+          name="title"
         />
         <select
-          className='select'
+          className="select"
           value={category}
           onChange={handleCategoryChange}
-          name='category'
+          name="category"
         >
           {categories.map((categ) => (
             <option key={uuidv4()} value={categ}>
@@ -53,7 +53,7 @@ const InputBook = () => {
             </option>
           ))}
         </select>
-        <input type='submit' value='ADD BOOK' className='add-book' />
+        <input type="submit" value="ADD BOOK" className="add-book" />
       </div>
     </form>
   );
