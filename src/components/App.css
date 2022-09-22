@@ -124,6 +124,17 @@ hr {
   width: 85%;
 }
 
+form {
+  width: 90%;
+  margin: auto;
+}
+
+.form-title {
+  color: #a5a5a5;
+  font-family: sans-serif;
+  margin: 0 35px;
+}
+
 .form-container {
   display: flex;
   justify-content: space-around;
