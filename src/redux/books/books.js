@@ -19,7 +19,10 @@ export const getBooks = () => async (dispatch) => {
     const { auther } = value[0];
     const { category } = value[0];
     fetchedBooks.push({
-      id, title, auther, category,
+      id,
+      title,
+      auther,
+      category,
     });
   });
 
@@ -30,10 +33,11 @@ export const addBook = (book) => async (dispatch) => {
   const result = await axios.post(baseApi, {
     item_id: book.id,
     title: book.title,
-    auther: book.auther,
+    author: book.author,
     category: book.category,
   });
   const addedBook = result.data;
+  // console.log(result.data);
   if (addedBook === 'Created') {
     dispatch({
       type: ADD_BOOK,

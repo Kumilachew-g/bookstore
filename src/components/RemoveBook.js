@@ -11,7 +11,7 @@ const RemoveBook = ({ id }) => {
   };
 
   return (
-    <button type="button" onClick={() => deleteBook(id)}>
+    <button type="button" className="book-btn" onClick={() => deleteBook(id)}>
       Remove
     </button>
   );
