@@ -7,7 +7,7 @@
   display: grid;
   grid-template-columns: 20% 68% 12%;
   padding-left: 100px;
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .navbar h1 {
