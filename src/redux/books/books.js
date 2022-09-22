@@ -37,7 +37,7 @@ export const addBook = (book) => async (dispatch) => {
     category: book.category,
   });
   const addedBook = result.data;
-  console.log(result.data);
+  // console.log(result.data);
   if (addedBook === 'Created') {
     dispatch({
       type: ADD_BOOK,
