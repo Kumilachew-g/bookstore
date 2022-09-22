@@ -10,7 +10,7 @@ const Book = ({ id, title, category }) => (
         <br />
         <span className="book-category">{category}</span>
         <br />
-        <span className="book-author">By Josh</span>
+        <span className="book-author">By Kumie</span>
         <br />
         <button type="button" className="book-btn comments">
           Comments
@@ -36,7 +36,7 @@ const Book = ({ id, title, category }) => (
       <div className="chapter-section">
         <span className="current-chapter">CURRENT CHAPTER</span>
         <br />
-        <span className="chapter">Chapter 17</span>
+        <span className="chapter">Chapter 18</span>
         <br />
         <button type="button" className="update-progress">
           UPDATE PROGRESS
