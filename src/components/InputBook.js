@@ -41,6 +41,7 @@ const InputBook = () => {
           className="input-title"
           id="bookTitle"
           placeholder="Book Title"
+          required
           value={title}
           onChange={handleTitleChange}
           name="title"
