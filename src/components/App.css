@@ -7,7 +7,7 @@
   display: grid;
   grid-template-columns: 20% 68% 12%;
   padding-left: 100px;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .navbar h1 {
@@ -148,7 +148,9 @@ form {
 }
 
 .select {
-  width: 22%;
+  width: 25%;
+  font-family: sans-serif;
+  color: #131313;
 }
 
 .add-book {
