@@ -4,13 +4,19 @@
 }
 
 .navbar {
-  display: flex;
-  padding: 0 18px;
+  display: grid;
+  grid-template-columns: 20% 68% 12%;
+  padding-left: 100px;
   background-color: #fff;
 }
 
 .navbar h1 {
   color: #0491ff;
+  font-family: sans-serif;
+}
+
+.links {
+  display: flex;
 }
 
 .navbar-links {
@@ -20,6 +26,32 @@
   color: #ababab;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.navbar-links:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.profile {
+  width: 21px;
+  margin-top: 21px;
+}
+
+.profile img {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #b4b3b3;
+  border-radius: 50%;
+}
+
+.card-styling {
+  display: grid;
+  width: 80%;
+  grid-template-columns: 40% 30% 30%;
+  margin: 15px auto;
+  padding: 10px 20px;
+  background-color: #fff;
 }
 
 .form-container {
