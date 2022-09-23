@@ -23,7 +23,6 @@ const Book = ({ id, title, category }) => (
       <div className="progress-section">
         <img
           alt="progress"
-          // variant="top"
           src="https://i.stack.imgur.com/7wcxc.png"
           className="progress-image"
         />

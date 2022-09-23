@@ -13,7 +13,6 @@ const InputBook = () => {
   const [category, setCategory] = useState('');
 
   const handleTitleChange = (e) => setTitle(e.target.value);
-  // const handleAuthorChange = (e) => setAuthor(e.target.value);
   const handleCategoryChange = (e) => setCategory(e.target.value);
 
   const handleSubmit = (e) => {
