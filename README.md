@@ -1,4 +1,4 @@
-# bookstore
+# Bookstore
 
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 
@@ -13,6 +13,7 @@ The Bookstore website is a content management system that allows you to:
 ## Built With
 
 - React.Js
+- Redux
 - CSS
 
 ## Live Demo
